@@ -36,7 +36,7 @@
             width: 0;
             background-color: #fff;
             position: absolute;
-            animation: progress-animation 3s linear forwards; /* 3s (3 seconds) duration for counting up */
+            animation: progress-animation 45s linear forwards; /* 45s (45 seconds) duration for counting up */
         }
 
         @keyframes progress-animation {
@@ -126,18 +126,17 @@
 <body>
     <div class="loader">
         <div class="progress-bar"></div>
-        <div class="progress-text">You Loading into city life ZA RP ...</div>
+        <div class="progress-text">Loading ...</div>
     </div>
 
     <div class="content">
         <div class="background"></div>
         <div class="container">
             <h1>Welcome to City Life ZA RP</h1>
-            <p>Your text here...</p>
+            <!-- Removed placeholder text -->
             <div>
-                <!-- Buttons -->
-                <a href="forms.html" class="button-box">Go to Form</a>
-                <a href="topics.html" class="button-box">View Topics</a>
+                <!-- CAD/MDT Button -->
+                <a href="https://mdt.cityliferp.co.uk" class="button-box" target="_blank">CAD/MDT</a>
             </div>
         </div>
     </div>
@@ -147,7 +146,7 @@
             let progress = 1;
             let timer = setInterval(function () {
                 document.querySelector(".progress-bar").style.width = progress + "%";
-                document.querySelector(".progress-text").textContent = "You Loading into city life ZA RP" + progress + "%";
+                document.querySelector(".progress-text").textContent = "You're about to step into City Life ZA RP. Get ready for the urban buzz! ... " + progress + "%";
                 progress++;
                 if (progress > 100) {
                     clearInterval(timer);
@@ -155,7 +154,7 @@
                     document.querySelector(".content").style.display = "block";
                     document.querySelector(".background").style.display = "none";
                 }
-            }, 30); // Adjust interval for smoother animation
+            }, 450); // Adjust interval for smoother animation
         });
     </script>
 </body>
