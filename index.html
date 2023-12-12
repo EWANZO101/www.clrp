@@ -36,7 +36,7 @@
             width: 0;
             background-color: #fff;
             position: absolute;
-            animation: progress-animation 30s linear forwards; /* 30s (30 seconds) duration for counting up */
+            animation: progress-animation 3s linear forwards; /* 3s (3 seconds) duration for counting up */
         }
 
         @keyframes progress-animation {
@@ -51,7 +51,7 @@
 
         .progress-text {
             position: absolute;
-            top: 50%;
+            top: calc(50% + 20px); /* Adjusted position for text */
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 2;
@@ -63,12 +63,11 @@
             position: relative;
             z-index: 2;
             text-align: center;
-            width: 100%;
-            height: 100%;
+            padding-top: 100px; /* Adjusted padding */
         }
 
         .background {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -92,7 +91,7 @@
 
         .container {
             max-width: 600px; /* Adjusted max-width for smaller container */
-            margin: 100px auto; /* Increased top margin to create space */
+            margin: 50px auto; /* Adjusted margin */
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for container */
             border-radius: 8px;
@@ -131,7 +130,6 @@
     </div>
 
     <div class="content">
-        <div class="background"></div>
         <div class="container">
             <h1>Welcome to City Life ZA RP</h1>
             <p>Your text here...</p>
@@ -142,6 +140,8 @@
             </div>
         </div>
     </div>
+
+    <div class="background"></div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -154,8 +154,9 @@
                     clearInterval(timer);
                     document.querySelector(".loader").style.display = "none";
                     document.querySelector(".content").style.display = "block";
+                    document.querySelector(".background").style.display = "none";
                 }
-            }, 300); // Adjust interval for smoother animation
+            }, 30); // Adjust interval for smoother animation
         });
     </script>
 </body>
