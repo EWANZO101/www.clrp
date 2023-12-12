@@ -31,7 +31,9 @@
             height: 100%;
             width: 0;
             background-color: #fff;
-            animation: progress-animation 2s ease-in-out forwards; /* Change duration as needed */
+            z-index: 1;
+            position: absolute;
+            animation: progress-animation 120s linear forwards; /* 120s (2 minutes) duration for counting up */
         }
 
         @keyframes progress-animation {
@@ -44,14 +46,29 @@
             }
         }
 
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            font-size: 18px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding-top: 100px; /* Adjust as needed */
+        }
+
         .container {
             max-width: 600px; /* Adjusted max-width for smaller container */
-            margin: 20px auto;
+            margin: 0 auto;
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for container */
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* White shadow for contrast */
-            text-align: center; /* Center-align content */
         }
 
         /* Rest of your styles... */
@@ -82,23 +99,34 @@
 <body>
     <div class="loader">
         <div class="progress-bar"></div>
+        <div class="progress-text">Loading...</div>
     </div>
 
-    <div class="container" style="display: none;">
-        <h1>Welcome to City Life ZA RP</h1>
-        <div>
-            <!-- Buttons -->
-            <a href="forms.html" class="button-box">Go to Form</a>
-            <a href="topics.html" class="button-box">View Topics</a>
+    <div class="content" style="display: none;">
+        <div class="container">
+            <h1>Welcome to City Life ZA RP</h1>
+            <p>Your text here...</p>
+            <div>
+                <!-- Buttons -->
+                <a href="forms.html" class="button-box">Go to Form</a>
+                <a href="topics.html" class="button-box">View Topics</a>
+            </div>
         </div>
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            setTimeout(function () {
-                document.querySelector(".loader").style.display = "none";
-                document.querySelector(".container").style.display = "block";
-            }, 2000); // Change this value to adjust the delay (in milliseconds)
+            let progress = 1;
+            let timer = setInterval(function () {
+                document.querySelector(".progress-bar").style.width = progress + "%";
+                document.querySelector(".progress-text").textContent = "Loading " + progress + "%";
+                progress++;
+                if (progress > 100) {
+                    clearInterval(timer);
+                    document.querySelector(".loader").style.display = "none";
+                    document.querySelector(".content").style.display = "block";
+                }
+            }, 1200); // Adjust interval for smoother animation
         });
     </script>
 </body>
