@@ -144,17 +144,26 @@
     </div>
 
     <script>
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+
         document.addEventListener("DOMContentLoaded", function () {
             let progress = 1;
             let timer = setInterval(function () {
                 document.querySelector(".progress-bar").style.width = progress + "%";
-                document.querySelector(".progress-text").textContent = "we are Loading You into City life ZA RP give us a moment... " + progress + "%";
+                document.querySelector(".progress-text").textContent = "Loading... " + progress + "%";
                 progress++;
                 if (progress > 100) {
                     clearInterval(timer);
                     document.querySelector(".loader").style.display = "none";
                     document.querySelector(".content").style.display = "block";
                     document.querySelector(".background").style.display = "none";
+                    
+                    // Redirect after 5 seconds (5000 milliseconds)
+                    setTimeout(function () {
+                        redirectTo('comingsoon.html');
+                    }, 1000);
                 }
             }, 450); // Adjust interval for smoother animation
         });
