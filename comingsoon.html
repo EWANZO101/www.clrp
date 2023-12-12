@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1abc9c; /* Teal background */
+            color: #fff; /* Light text color */
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for effect */
+        }
+
+        #timer {
+            font-size: 3em;
+            font-weight: bold;
+            background-color: #34495e; /* Darker background for timer */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Coming Soon</h1>
+        <div id="timer"></div>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const countDownDate = new Date();
+            countDownDate.setDate(countDownDate.getDate() + 10); // Set timer for 10 days
+
+            const timer = setInterval(function () {
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.getElementById("timer").innerHTML = "It's here!";
+                } else {
+                    document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+                        + minutes + "m " + seconds + "s left";
+                }
+            }, 1000);
+        }
+
+        // Call the function to start the countdown
+        updateCountdown();
+    </script>
+</body>
+
+</html>
