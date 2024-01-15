@@ -17,8 +17,9 @@
             color: #fff; /* White text */
             transition: background-color 0.3s ease;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             position: relative;
         }
@@ -65,7 +66,7 @@
             position: relative;
             z-index: 2;
             text-align: center;
-            padding-top: 100px; /* Adjusted padding */
+            padding-top: 20px; /* Adjusted padding */
         }
 
         .background {
@@ -95,7 +96,7 @@
 
         .container {
             max-width: 600px; /* Adjusted max-width for smaller container */
-            margin: 50px auto; /* Adjusted margin */
+            margin: 20px auto; /* Adjusted margin */
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for container */
             border-radius: 8px;
@@ -127,9 +128,9 @@
         /* Additional styles for the header and audio player */
         .header {
             position: absolute;
-            top: 50%;
+            top: 20px;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
             z-index: 2;
             text-align: center;
             font-size: 24px;
