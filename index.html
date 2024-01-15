@@ -145,6 +145,26 @@
             text-align: center;
             transition: bottom 1s ease; /* Smooth transition when moving down */
         }
+
+        .about-box {
+            background-color: #555;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .application {
+            background-color: #555;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .application textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -171,6 +191,30 @@
         <a href="https://discord.gg/nxBPFbvxdW" class="button-box" target="_blank">Discord</a>
         
         <a href="#" class="button-box" target="_blank">What we offer</a>
+
+        <!-- About City Life ZA RP -->
+        <div class="about-box">
+            <p>About City Life ZA RP:</p>
+            <p>City Life ZA RP is a South African-based server with QB core and South African owners. We offer many amazing scripts, cars, and great outfits for LEO and civ. Start your journey today with City Life! Join our Discord to get started and apply. You will be asked some questions and information about yourself and your character.</p>
+        </div>
+
+        <!-- Application Form -->
+        <div class="application">
+            <p>Application Form:</p>
+            <label for="cityName">What will your city name be in the game?</label>
+            <input type="text" id="cityName" name="cityName" required>
+
+            <label for="discordUsername">What's your Discord username?</label>
+            <input type="text" id="discordUsername" name="discordUsername" required>
+
+            <label for="rulesFamiliarized">Have you familiarized yourself with the rules?</label>
+            <input type="text" id="rulesFamiliarized" name="rulesFamiliarized" required>
+
+            <!-- Add more questions as needed -->
+
+            <label for="characterBackstory">Could you provide a character backstory of at least [min 100 words]?</label>
+            <textarea id="characterBackstory" name="characterBackstory" required></textarea>
+        </div>
     </div>
 
     <!-- Additional audio player -->
