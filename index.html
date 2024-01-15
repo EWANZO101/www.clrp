@@ -138,11 +138,12 @@
 
         .audio-player {
             position: absolute;
-            bottom: 20px;
+            bottom: -500px; /* Initially move it out of the screen */
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
             text-align: center;
+            transition: bottom 1s ease; /* Smooth transition when moving down */
         }
     </style>
 </head>
@@ -199,6 +200,9 @@
                     setTimeout(function () {
                         redirectTo('comingsoon.html');
                     }, 100000);
+
+                    // Move the audio player down
+                    document.querySelector(".audio-player").style.bottom = "20px";
                 } else if (progress === 35) {
                     // Autoplay the audio at 35%
                     document.querySelector(".audio-player iframe").src += "&autoplay=1";
