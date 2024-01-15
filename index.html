@@ -192,17 +192,22 @@
 
         <div class="application">
             <p>Application Form:</p>
-            <label for="cityName">City Name in the Game:</label>
-            <input type="text" id="cityName" name="cityName" required>
-
-            <label for="discordUsername">Discord Username:</label>
-            <input type="text" id="discordUsername" name="discordUsername" required>
-
-            <label for="rulesFamiliarized">Familiarized with the Rules?</label>
-            <input type="text" id="rulesFamiliarized" name="rulesFamiliarized" required>
-
-            <label for="characterBackstory">Character Backstory (min 100 words):</label>
-            <textarea id="characterBackstory" name="characterBackstory" required></textarea>
+            <head>
+                <meta charset="UTF-8">
+                <title>Redirect Button</title>
+            </head>
+            <body>
+            
+            <!-- Redirect Button -->
+            <button onclick="redirectToDiscord()">Go to Discord</button>
+            
+            <!-- JavaScript function for redirection -->
+            <script>
+                function redirectToDiscord() {
+                    // Redirect to the specified Discord link
+                    window.location.href = "https://discord.com/channels/1133484004755124244/1174637556726501486";
+                }
+            </script>
         </div>
     </div>
 
