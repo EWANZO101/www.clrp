@@ -183,8 +183,18 @@
             </div>
         </div>
         <a href="https://discord.gg/nxBPFbvxdW" class="button-box" target="_blank">Discord</a>
-        <a href="#" class="button-box" target="_blank">What we offer</a>
-
+        <div class="button-box">
+            <form action="forms.html" method="get" target="_blank">
+                <!-- Your form fields go here -->
+                <input type="text" name="username" placeholder="Username">
+                
+                <!-- Add a button to trigger the form submission -->
+                <button type="submit">Submit</button>
+            </form>
+            
+            <!-- Use JavaScript to handle the form submission on anchor click -->
+            <a href="#" onclick="document.forms[0].submit(); return false;">Open Form</a>
+        </div>
         <div class="about-box">
             <p>About City Life ZA RP:</p>
             <p>City Life ZA RP is a South African-based server with QB core and South African owners. We offer many amazing scripts, cars, and great outfits for LEO and civ. Start your journey today with City Life! Join our Discord to get started and apply. You will be asked some questions and information about yourself and your character.</p>
