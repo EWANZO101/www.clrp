@@ -181,78 +181,68 @@
             <div>
                 <a href="https://cad.cityliferp.co.uk" class="button-box" target="_blank">CAD/MDT</a>
             </div>
+            <a href="https://discord.gg/nxBPFbvxdW" class="button-box" target="_blank">Discord</a>
+            <div class="button-box">
+                <form action="forms.html" method="get" target="_blank">
+                    <!-- Your form fields go here -->
+                    <input type="text" name="username" placeholder="Username">
+                    <!-- Add a button to trigger the form submission -->
+                    <button type="submit">Submit</button>
+                </form>
+                <!-- Use JavaScript to handle the form submission on anchor click -->
+                <a href="#" onclick="document.forms[0].submit(); return false;">Open Form</a>
+            </div>
+            <div class="about-box">
+                <p>About City Life ZA RP:</p>
+                <p>City Life ZA RP is a South African-based server with QB core and South African owners. We offer many amazing scripts, cars, and great outfits for LEO and civ. Start your journey today with City Life! Join our Discord to get started and apply. You will be asked some questions and information about yourself and your character.</p>
+            </div>
+
+            <div class="application">
+                <p>Application Form:</p>
+                <!-- Redirect Button -->
+                <button onclick="redirectToDiscord()">Go to Discord</button>
+                <!-- JavaScript function for redirection -->
+                <script>
+                    function redirectToDiscord() {
+                        // Redirect to the specified Discord link
+                        window.location.href = "https://discord.com/channels/1133484004755124244/1174637556726501486";
+                    }
+                </script>
+            </div>
         </div>
-        <a href="https://discord.gg/nxBPFbvxdW" class="button-box" target="_blank">Discord</a>
-        <div class="button-box">
-            <form action="forms.html" method="get" target="_blank">
-                <!-- Your form fields go here -->
-                <input type="text" name="username" placeholder="Username">
-                
-                <!-- Add a button to trigger the form submission -->
-                <button type="submit">Submit</button>
-            </form>
-            
-            <!-- Use JavaScript to handle the form submission on anchor click -->
-            <a href="#" onclick="document.forms[0].submit(); return false;">Open Form</a>
-        </div>
-        <div class="about-box">
-            <p>About City Life ZA RP:</p>
-            <p>City Life ZA RP is a South African-based server with QB core and South African owners. We offer many amazing scripts, cars, and great outfits for LEO and civ. Start your journey today with City Life! Join our Discord to get started and apply. You will be asked some questions and information about yourself and your character.</p>
+
+        <div class="audio-player">
+            <iframe width="320" height="180" src="https://www.youtube.com/embed/s8XIgR5OGJc?list=RDQMWB1X6ktsAbA&index=3&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
 
-        <div class="application">
-            <p>Application Form:</p>
-            <head>
-                <meta charset="UTF-8">
-                <title>Redirect Button</title>
-            </head>
-            <body>
-            
-            <!-- Redirect Button -->
-            <button onclick="redirectToDiscord()">Go to Discord</button>
-            
-            <!-- JavaScript function for redirection -->
-            <script>
-                function redirectToDiscord() {
-                    // Redirect to the specified Discord link
-                    window.location.href = "https://discord.com/channels/1133484004755124244/1174637556726501486";
-                }
-            </script>
-        </div>
-    </div>
+        <script>
+            function redirectTo(page) {
+                window.location.href = page;
+            }
 
-    <div class="audio-player">
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/s8XIgR5OGJc?list=RDQMWB1X6ktsAbA&index=3&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
+            document.addEventListener("DOMContentLoaded", function () {
+                let progress = 1;
+                let timer = setInterval(function () {
+                    document.querySelector(".progress-bar").style.width = progress + "%";
+                    document.querySelector(".progress-text").textContent = "Loading... " + progress + "%";
+                    progress++;
+                    if (progress > 100) {
+                        clearInterval(timer);
+                        document.querySelector(".loader").style.display = "none";
+                        document.querySelector(".content").style.display = "block";
+                        document.querySelector(".background").style.display = "none";
 
-    <script>
-        function redirectTo(page) {
-            window.location.href = page;
-        }
+                        setTimeout(function () {
+                            redirectTo('comingsoon.html');
+                        }, 100000);
 
-        document.addEventListener("DOMContentLoaded", function () {
-            let progress = 1;
-            let timer = setInterval(function () {
-                document.querySelector(".progress-bar").style.width = progress + "%";
-                document.querySelector(".progress-text").textContent = "Loading... " + progress + "%";
-                progress++;
-                if (progress > 100) {
-                    clearInterval(timer);
-                    document.querySelector(".loader").style.display = "none";
-                    document.querySelector(".content").style.display = "block";
-                    document.querySelector(".background").style.display = "none";
-
-                    setTimeout(function () {
-                        redirectTo('comingsoon.html');
-                    }, 100000);
-
-                    document.querySelector(".audio-player").style.bottom = "20px";
-                } else if (progress === 35) {
-                    document.querySelector(".audio-player iframe").src += "&autoplay=1";
-                }
-            }, 450);
-        });
-    </script>
-</body>
+                        document.querySelector(".audio-player").style.bottom = "20px";
+                    } else if (progress === 35) {
+                        document.querySelector(".audio-player iframe").src += "&autoplay=1";
+                    }
+                }, 450);
+            });
+        </script>
+    </body>
 
 </html>
